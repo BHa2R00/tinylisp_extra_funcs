@@ -1,2 +1,2 @@
 # tinylisp_extra_funcs
-Extra functions for TinyLisp
+Some extra functions for TinyLisp
