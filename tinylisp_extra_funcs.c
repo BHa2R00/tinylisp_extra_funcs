@@ -16,3 +16,14 @@ L catstr2(const char* s1,const char* s2){
 	return atom(r);
 }
 L f_catstr(L t,L e) { L n = car(t = evlis(t,e)); while (!not(t = cdr(t))) n = catstr2(A+ord(n),A+ord(car(t))); return n; }
+
+//binary
+L f_ash(L t,L e) {
+	L x = car(evlis(t,e));
+	L k = car(cdr(evlis(t,e)));
+	return (k<0) ? (L)((I)x >> (I)fabs(k)) : (L)((I)x << (I)fabs(k));
+}
+L f_lognot(L t,L e) { return t = evlis(t,e),-(car(t)+1); }
+L f_logand(L t,L e) { return t = evlis(t,e),(I)car(t)&(I)car(cdr(t)); }
+L f_logor(L t,L e) { return t = evlis(t,e),(I)car(t)|(I)car(cdr(t)); }
+L f_logxor(L t,L e) { return t = evlis(t,e),(I)car(t)^(I)car(cdr(t)); }
